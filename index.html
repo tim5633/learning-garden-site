@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A reviewed, distraction-light personal knowledge garden.">
+  <title>Learning Garden · Notes</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#notes">跳到筆記資料庫</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="知識庫導覽">
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">✦</span><span><strong>Learning Garden</strong><small>個人知識庫</small></span></a>
+      <nav class="nav-list" aria-label="筆記檢視">
+        <button class="nav-item is-active" data-view="all" type="button"><span aria-hidden="true">▦</span>所有筆記</button>
+        <button class="nav-item" data-view="review" type="button"><span aria-hidden="true">◷</span>待複習</button>
+        <a class="nav-item" href="knowledge-map.mmd"><span aria-hidden="true">⌘</span>知識連結圖</a>
+      </nav>
+      <section class="sidebar-section"><p>分類</p><div id="sidebar-domains" class="sidebar-domains"></div></section>
+      <footer class="sidebar-footer"><span class="sync-dot"></span>只顯示明確標示為公開的筆記</footer>
+    </aside>
+    <div class="main-column">
+      <header class="topbar"><button id="sidebar-toggle" class="icon-button" type="button" aria-label="開啟或關閉導覽">☰</button><p><span>知識庫</span><b>/</b> 全部筆記</p><a href="https://github.com/tim5633/learning-garden-site" target="_blank" rel="noreferrer">在 GitHub 開啟 ↗</a></header>
+      <main class="workspace">
+        <header class="page-heading"><div class="page-icon" aria-hidden="true">📚</div><div><p class="eyebrow">REVIEWED KNOWLEDGE</p><h1>全部筆記</h1><p>把已理解的內容整理成可以再找到、再複習、再連結的頁面。</p></div></header>
+        <section class="focus-callout" aria-labelledby="study-title"><div><p class="eyebrow">TODAY'S RESET</p><h2 id="study-title">一次只讀一個觀念</h2><p>先讀一句話，再用複習問題驗證理解。不必一次吸收全部。</p></div><button id="random-note" class="primary-button" type="button">抽一張複習卡 <span aria-hidden="true">→</span></button></section>
+        <section class="database-toolbar" aria-label="搜尋與篩選"><label class="search-field"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜尋筆記、概念或標籤…" autocomplete="off"></label><label class="select-field">分類<select id="domain"><option value="">全部</option></select></label><label class="select-field">標籤<select id="tag"><option value="">全部</option></select></label></section>
+        <div class="database-heading"><p id="result-count" aria-live="polite"></p><span><strong>1</strong> pages · <strong>5</strong> tags</span></div>
+        <section id="notes" class="note-database" aria-label="筆記資料庫"></section>
+        <section class="map-panel"><div class="map-icon" aria-hidden="true">⌘</div><div><h2>知識連結圖</h2><p>每張筆記的 <code>related</code> 欄位會建立連結。可在 GitHub 預覽 Mermaid 圖。</p></div><a href="knowledge-map.mmd">開啟圖表 →</a></section>
+      </main>
+    </div>
+  </div>
+  <template id="note-template"><article class="note-card"><details><summary><span class="note-icon" aria-hidden="true"></span><span class="note-summary"><span class="note-meta"></span><span class="note-title"></span><span class="preview"></span></span><span class="chevron" aria-hidden="true">⌄</span></summary><div class="note-expanded"><div class="note-properties"></div><div class="note-body"></div><p class="review"></p></div></details></article></template>
+  <script src="assets/app.js"></script>
+</body>
+</html>
